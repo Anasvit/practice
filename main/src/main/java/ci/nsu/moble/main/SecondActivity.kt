@@ -38,7 +38,6 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import ci.nsu.moble.main.ui.theme.PracticeTheme
 
-// sealed class хранит маршруты экранов для нижнего меню
 sealed class SecondScreen(
     val route: String,
     val title: String
@@ -67,7 +66,6 @@ fun SecondActivityScreen() {
     val context = LocalContext.current
     val navController = rememberNavController()
 
-    // Получаем строку, которую передали из MainActivity через Intent
     val receivedText = remember {
         if (context is Activity) {
             context.intent.getStringExtra("message") ?: "No text received"
@@ -93,7 +91,6 @@ fun SecondActivityScreen() {
                 navigationIcon = {
                     IconButton(
                         onClick = {
-                            // Возврат назад в MainActivity
                             if (context is Activity) {
                                 context.finish()
                             }

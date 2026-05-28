@@ -44,7 +44,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-// sealed class хранит все экраны нижнего меню
 sealed class BottomScreen(
     val route: String,
     val title: String
@@ -76,7 +75,6 @@ fun MainScreenActivity() {
                         selected = currentRoute == item.route,
                         onClick = {
                             navController.navigate(item.route) {
-                                // Чтобы при переключении меню не создавались лишние копии экранов
                                 launchSingleTop = true
                             }
                         },
