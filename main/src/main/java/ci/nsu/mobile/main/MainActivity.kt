@@ -111,7 +111,7 @@ fun CounterScreen(viewModel: CounterViewModel) {
             fontSize = 28.sp
         )
 
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(4.dp))
 
         Text(
             text = uiState.count.toString(),
